@@ -9,7 +9,7 @@ import { render } from 'react-dom';
 
 // import components js
 // ==========================================================================
-import ContrlPanel from './components/ContrlPanel.js';
+import ContrlPanelSum from './components/ContrlPanelSum.js';
 
 
-render( <ContrlPanel />, document.getElementById('main'));
+render( <ContrlPanelSum />, document.getElementById('main'));
