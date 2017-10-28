@@ -10,8 +10,7 @@ class Summary extends Component {
 	constructor(props) {
 		super(props);
 
-		this.onClickIncrementBtn = this.onClickIncrementBtn.bind(this);
-		this.onClickDecrementBtn = this.onClickDecrementBtn.bind(this);
+		this.onUpdate = this.onUpdate.bind(this);
 
 		this.state = {
 			sum: SummaryStore.getSummary()
@@ -20,13 +19,18 @@ class Summary extends Component {
 	}
 
 	componentDidMount() {
-		SummaryStore.addChamgeListener(this.onUpdate);
+		SummaryStore.addChangeListener(this.onUpdate);
 	}
 
 	componentWillUnmount() {
 		SummaryStore.removeChangeListener(this.onUpdate);
 	}
 
+	onUpdate() {
+		this.setState({
+			sum: SummaryStore.getSummary()
+		})
+	}
 
 
 	render() {

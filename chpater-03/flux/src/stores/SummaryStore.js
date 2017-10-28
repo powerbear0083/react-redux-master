@@ -17,7 +17,7 @@ function computeSummary(counterValues) {
 	return summary;
 }
 
-class SummaryStore = Object.assign({}, EventEmitter.prototype, {
+const SummaryStore = Object.assign({}, EventEmitter.prototype, {
 	getSummary: function() {
 		return computeSummary(CounterStore.getCounterValues());
 	},
@@ -32,7 +32,7 @@ class SummaryStore = Object.assign({}, EventEmitter.prototype, {
 
 	removeChangeListener: function(callback) {
 		this.removeListener(CHANGE_EVENT, callback);
-	},
+	}
 
 });
 

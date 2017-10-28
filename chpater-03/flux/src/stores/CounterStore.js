@@ -29,7 +29,7 @@ const CounterStore = Object.assign({}, EventEmitter.prototype, {
 
 });
 
-CounterStore.dispatchToken = AppDispatcher.register( () => {
+CounterStore.dispatchToken = AppDispatcher.register( (action) => {
 	if ( action.type === ActionTypes.INCREMENT ) {
 		counterValues[action.counterCaption] ++;
 		CounterStore.emitChange();

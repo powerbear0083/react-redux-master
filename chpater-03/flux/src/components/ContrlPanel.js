@@ -2,6 +2,7 @@ import React from 'react';
 import { Component } from 'react';
 import { render } from 'react-dom';
 import Counter from './Counter.js';
+import Summary from './Summary.js';
 
 class ContrlPanel extends Component {
 
@@ -12,9 +13,8 @@ class ContrlPanel extends Component {
 				<Counter caption='First' />
 				<Counter caption='Second' />
 				<Counter caption='Third' />
-				<button onClick={ ()=> this.forceUpdate() }>
-					Click me to repaint!
-				</button>
+				<hr/>
+				<Summary />
 			</div>
 		);
 	}
