@@ -13,7 +13,7 @@ const TodoList = ({todos, onToggleTodo, onRemoveTodo}) => {
 					<TodoItem 
 						key={item.id}
 						text={item.text}
-						completedcompleted={item.completed}
+						completed={item.completed}
 						onToggle={() => onToggleTodo(item.id)}
 						onRemove={() => onRemoveTodo(item.id)}
 					/>
@@ -49,7 +49,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
 	return {
 		onToggleTodo: (id) => {
-			dispatch(toogleTodo(id));
+			dispatch(toggleTodo(id));
 		},
 		onRemoveTodo: (id) => {
 			dispatch(removeTodo(id));
