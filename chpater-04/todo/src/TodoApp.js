@@ -7,7 +7,8 @@ import {view as Filter} from './filter/';
 function TodoApp() {
 	return (
 		<div>
-			11
+			<Todos />
+			<Filter />
 		</div>
 	);
 }

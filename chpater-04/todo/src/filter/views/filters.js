@@ -7,7 +7,7 @@ import {FilterTypes} from '../../constants.js';
 const Filters = () => {
 	return (
 		<p className="filters">
-			<Link filter={FilterTypees.ALL}> {FilterTypes.All} </Link>
+			<Link filter={FilterTypes.ALL}> {FilterTypes.All} </Link>
 			<Link filter={FilterTypes.COMPLETED}> {FilterTypes.COMPLETED} </Link>
 			<Link filter={FilterTypes.UNCOMPLETED}> {FilterTypes.UNCOMPLETED} </Link>
 		</p>

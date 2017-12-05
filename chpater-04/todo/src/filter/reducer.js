@@ -6,7 +6,7 @@ export default (state = FilterTypes.ALL, action) => {
 		case SET_FILTER: {
 			return action.filter;
 		}
-		defaule: 
+		default: 
 			return state;
 	}
 }
