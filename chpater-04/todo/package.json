@@ -44,6 +44,7 @@
     "react-router-dom": "^4.1.1",
     "redux": "^3.7.2",
     "redux-immutable-state-invariant": "^2.1.0",
+    "redux-thunk": "^2.2.0",
     "rimraf": "^2.6.1",
     "sass-loader": "^6.0.5",
     "style-loader": "^0.17.0",
