@@ -4,7 +4,8 @@
   "private": true,
   "devDependencies": {
     "react-scripts": "0.8.4",
-    "redux-immutable-state-invariant": "^1.2.4"
+    "redux-immutable-state-invariant": "^1.2.4",
+    "reselect": "^3.0.1"
   },
   "dependencies": {
     "react": "^15.4.1",
