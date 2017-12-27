@@ -1,10 +1,38 @@
 import React from 'react';
 
+const cityCode = 101010100;
+
 class Weather extends React.Component {
 
   constructor() {
     super (...arguments);
     this.state = {weather: null}
+  }
+
+  componentDidMount() {
+    const apiUrl = `/data/cityinfo/${cityCode}.html`;
+
+    fetch(apiUrl).then( (response) => {
+      console.log(response)
+      if (response.status !== 200 ) {
+        throw new Error('Fail to get response with status ' + response.status);
+      }
+
+      response.json().then( (responseJson) => {
+        this.setState({
+          weather: responseJson.weatherinfo
+        });
+      }).catch( (error) => {
+        this.setState({
+          weather: null
+        });
+      }).catch((error) => {
+        this.setState({weather: null});
+      });
+
+    }
+    );
+
   }
 
   render() {
