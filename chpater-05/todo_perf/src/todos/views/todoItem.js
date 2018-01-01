@@ -9,6 +9,9 @@ class TodoItem extends React.Component {
 
     console.log('enter TodoItem constructor: ' + this.props.text);
   }
+  shouldComponentUpdate(nextProps, nextState) {
+    return (nextProps.completed !== this.props.completed) || (nextProps.text !== this.props.text)
+  }
 
   render() {
     const {onToggle, onRemove, completed, text } = this.props;
@@ -35,6 +38,7 @@ TodoItem.propTypes = {
   completed: PropTypes.bool.isRequired,
   text: PropTypes.string.isRequired
 }
+
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   const {id} = ownProps;
