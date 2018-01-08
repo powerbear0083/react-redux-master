@@ -5,17 +5,17 @@ import * as Status from './status.js';
 const Weather = ({status, cityName, weather, lowestTemp, highestTemp}) => {
   switch (status) {
     case Status.LOADING: {
-      return <div>天气信息请求中...</div>;
+      return <div>天氣訊息載入中...</div>
     }
     case Status.SUCCESS: {
       return (
         <div>
-          {cityName} {weather} 最低气温 {lowestTemp} 最高气温 {highestTemp}
+          {cityName} {weather} 最低氣溫 {lowestTemp} 最高氣溫 {highestTemp}
         </div>
       )
     }
     case Status.FAILURE: {
-      return <div>天气信息装载失败</div> 
+      return <div>天氣訊息載入失敗</div>
     }
     default: {
       throw new Error('unexpected status ' + status);
@@ -29,7 +29,7 @@ Weather.propTypes = {
   weather: PropTypes.string,
   lowestTemp: PropTypes.string,
   highestTemp: PropTypes.string
-};
+}
 
 const mapStateTopProps = (state) => {
   const weatherData = state.weather;
@@ -40,7 +40,9 @@ const mapStateTopProps = (state) => {
     weather: weatherData.weather,
     lowestTemp: weatherData.temp1,
     highestTemp: weatherData.temp2
-  };
+  }
+
 }
+
 
 export default connect(mapStateTopProps)(Weather);

@@ -8,25 +8,25 @@ const CITY_CODES = {
   '上海': 101020100,
   '广州': 101280101,
   '深圳': 101280601
-};
-
-
+}
 
 class CitySelector extends React.Component {
+
   constructor() {
     super(...arguments);
 
     this.onChange = this.onChange.bind(this);
   }
 
-  onChange(ev) {
-    const cityCode = ev.target.value;
-    this.props.onSelectCity(cityCode)
-  }
-
   componentDidMount() {
     const defaultCity = Object.keys(CITY_CODES)[0];
+    console.log(defaultCity)
     this.props.onSelectCity(CITY_CODES[defaultCity]);
+  }
+
+  onChange(e) {
+    const cityCode = e.target.value;
+    this.props.onSelectCity(cityCode);
   }
 
   render() {
@@ -40,11 +40,12 @@ class CitySelector extends React.Component {
       </select>
     );
   }
+
 }
 
 CitySelector.propTypes = {
   onSelectCity: PropTypes.func.isRequired
-};
+}
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -52,7 +53,10 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(weatherActions.fetchWeather(cityCode));
     }
   }
-};
+}
 
 export default connect(null, mapDispatchToProps)(CitySelector);
+
+
+
 

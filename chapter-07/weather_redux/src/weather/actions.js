@@ -7,22 +7,22 @@ export const fetchWeatherStarted = () => ({
 export const fetchWeatherSuccess = (result) => ({
   type: FETCH_SUCCESS,
   result
-})
+});
 
 export const fetchWeatherFailure = (error) => ({
   type: FETCH_FAILURE,
   error
-})
+});
 
 export const fetchWeather = (cityCode) => {
   return (dispatch) => {
     const apiUrl = `/data/cityinfo/${cityCode}.html`;
 
-    dispatch(fetchWeatherStarted())
+    dispatch(fetchWeatherStarted());
 
     return fetch(apiUrl).then((response) => {
-      if (response.status !== 200) {
-        throw new Error('Fail to get response with status ' + response.status);
+      if(response.status !== 200) {
+        throw new Error('Fail to get response with status' + response.status);
       }
 
       response.json().then((responseJson) => {
@@ -30,10 +30,13 @@ export const fetchWeather = (cityCode) => {
       }).catch((error) => {
         dispatch(fetchWeatherFailure(error));
       });
+
     }).catch((error) => {
       dispatch(fetchWeatherFailure(error));
-    })
-  };
+    });
+
+  }
 }
+
 
 
